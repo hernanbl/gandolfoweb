@@ -40,9 +40,9 @@ const Features = () => {
     <section id="features" className="py-20 px-6 md:px-10 bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Potencia tu restaurante con IA</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Potencia tu restaurante con Gandolfo</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Nuestras características están diseñadas específicamente para mejorar la atención al cliente en restaurantes
+          Diseñado para enamorar a tus clientes y mejorar tu rentabilidad.
           </p>
         </div>
 

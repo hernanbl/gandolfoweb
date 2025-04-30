@@ -15,10 +15,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-sm font-medium hover:text-primary">Características</a>
+          <a href="#features" className="text-sm font-medium hover:text-primary">Beneficios</a>
           <a href="#reservations" className="text-sm font-medium hover:text-primary">Reservas</a>
           <a href="#whatsapp" className="text-sm font-medium hover:text-primary">WhatsApp</a>
-          <a href="#dashboard" className="text-sm font-medium hover:text-primary">Dashboard</a>
+          <a href="#dashboard" className="text-sm font-medium hover:text-primary">Resultados</a>
           <Button variant="outline" className="ml-2">Iniciar Sesión</Button>
           <Button className="bg-[#fde68a] text-[#8a6914] font-bold hover:bg-[#fbc222]">Probar Gratis</Button>
         </div>

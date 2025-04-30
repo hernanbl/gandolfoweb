@@ -40,16 +40,16 @@ const ReservationDemo = () => {
                 </div>
                 <Button className="w-full bg-black hover:bg-gray-800 text-white mt-4">Confirmar reserva</Button>
                 <p className="text-xs text-center text-black mt-4">
-                  Cancelación gratuita hasta 2 horas antes
+                  Solo de demostración. No se procesará ninguna reserva real.
                 </p>
               </div>
             </div>
           </div>
           
           <div className="order-1 lg:order-2 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-black">Sistema de reservas inteligente</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">Cada reserva impulsa tu rentabilidad.</h2>
             <p className="text-lg text-black">
-              Automatiza la gestión de reservas de tu restaurante con nuestro sistema inteligente que se integra con tu sitio web y WhatsApp.
+            Automatizá tus reservas. Integración total con tu web y WhatsApp.
             </p>
             <ul className="space-y-4">
               {[

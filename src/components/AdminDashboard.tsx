@@ -38,9 +38,9 @@ const AdminDashboard = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Dashboard de administrador potente</h2>
+            <h2 className="text-3xl md:text-4xl font-bold"> Control absoluto. Ganancias reales</h2>
             <p className="text-lg text-gray-300">
-            Visualización clara de la ocupación de mesas en tiempo real desde un único panel intuitivo y fácil de usar.
+            Visualiza en tiempo real cómo aumentan tus reservas, la ocupación y tus ingresos. Toma decisiones basadas en datos para reducir costos y potenciar tus ganancias.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
@@ -58,7 +58,7 @@ const AdminDashboard = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Gestión de reservas</h3>
-                  <p className="text-gray-400">Administra todas las reservas desde un solo lugar</p>
+                  <p className="text-gray-400">Reservas firmes. Resultados reales.</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -67,7 +67,7 @@ const AdminDashboard = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Notificaciones personalizables</h3>
-                  <p className="text-gray-400">Notificaciones automáticas para reducir las ausencias
+                  <p className="text-gray-400">Automatización que rinde.
                   </p>
                 </div>
               </div>

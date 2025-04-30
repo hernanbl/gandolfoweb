@@ -13,10 +13,10 @@ const Hero = () => {
               <span className="text-sm font-medium text-white">Atención al cliente reinventada</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-              Atención al cliente con <span className="text-[#f97118]">IA</span> para restaurantes
+            Tu restaurante, en modo  <span className="text-[#f97118]">inteligente</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-xl">
-              Automatiza reservas, responde preguntas y mejora la experiencia del cliente con nuestra plataforma de IA integrada con WhatsApp y web.
+            Reservas automatizadas. Costos bajos. Mesas llenas.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
               <Button className="text-md bg-gradient-to-r from-orange-500 to-red-500 h-12 px-6 shadow-lg shadow-orange-500/20 text-white">
