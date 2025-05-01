@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
@@ -15,12 +14,12 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-sm font-medium hover:text-primary">Beneficios</a>
-          <a href="#reservations" className="text-sm font-medium hover:text-primary">Reservas</a>
-          <a href="#whatsapp" className="text-sm font-medium hover:text-primary">WhatsApp</a>
-          <a href="#dashboard" className="text-sm font-medium hover:text-primary">Resultados</a>
-          <Button variant="outline" className="ml-2">Iniciar Sesión</Button>
-          <Button className="bg-[#fde68a] text-[#8a6914] font-bold hover:bg-[#fbc222]">Probar Gratis</Button>
+          <a href="#features" className="text-base font-semibold hover:text-primary">Beneficios</a>
+          <a href="#reservations" className="text-base font-semibold hover:text-primary">Reservas</a>
+          <a href="#whatsapp" className="text-base font-semibold hover:text-primary">WhatsApp</a>
+          <a href="#dashboard" className="text-base font-semibold hover:text-primary">Resultados</a>
+          <Button variant="outline" className="ml-2 text-base">Iniciar Sesión</Button>
+          <Button className="bg-[#fde68a] text-[#8a6914] font-bold hover:bg-[#fbc222] text-base">Probar Gratis</Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -39,12 +38,12 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-6 animated fade-in z-40">
           <div className="flex flex-col space-y-4">
-            <a href="#features" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>Características</a>
-            <a href="#reservations" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>Reservas</a>
-            <a href="#whatsapp" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>WhatsApp</a>
-            <a href="#dashboard" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>Dashboard</a>
-            <Button variant="outline" className="w-full">Iniciar Sesión</Button>
-            <Button className="w-full bg-[#fde68a] text-[#8a6914] font-bold hover:bg-[#fbc222]">Probar Gratis</Button>
+            <a href="#features" className="text-base font-semibold" onClick={() => setMobileMenuOpen(false)}>Beneficios</a>
+            <a href="#reservations" className="text-base font-semibold" onClick={() => setMobileMenuOpen(false)}>Reservas</a>
+            <a href="#whatsapp" className="text-base font-semibold" onClick={() => setMobileMenuOpen(false)}>WhatsApp</a>
+            <a href="#dashboard" className="text-base font-semibold" onClick={() => setMobileMenuOpen(false)}>Resultados</a>
+            <Button variant="outline" className="w-full text-base">Iniciar Sesión</Button>
+            <Button className="w-full bg-[#fde68a] text-[#8a6914] font-bold hover:bg-[#fbc222] text-base">Probar Gratis</Button>
           </div>
         </div>
       )}

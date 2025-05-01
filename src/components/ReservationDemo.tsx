@@ -4,7 +4,7 @@ import { Calendar, Clock, Users, ChevronDown, CheckCircle } from "lucide-react";
 
 const ReservationDemo = () => {
   return (
-    <section id="reservations" className="py-20 px-6 md:px-10 bg-gradient-to-br from-slate-50 to-slate-100">
+    <section id="reservations" className="py-20 px-6 md:px-10 bg-gradient-to-br from-fuchsia-400 via-amber-300 to-yellow-100">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
@@ -47,7 +47,7 @@ const ReservationDemo = () => {
           </div>
           
           <div className="order-1 lg:order-2 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-black">Cada reserva impulsa tu rentabilidad.</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-black">Cada reserva impulsa tu rentabilidad.</h2>
             <p className="text-lg text-black">
             Automatizá tus reservas. Integración total con tu web y WhatsApp.
             </p>
