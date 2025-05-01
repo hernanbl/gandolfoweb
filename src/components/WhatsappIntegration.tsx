@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 
 const WhatsappIntegration = () => {
   return (
-    <section id="whatsapp" className="py-20 px-6 md:px-10 bg-white">
+    <section id="whatsapp" className="py-20 px-6 md:px-10 bg-[#f5f5f7]">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Integración con WhatsApp</h2>

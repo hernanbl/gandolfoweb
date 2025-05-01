@@ -4,7 +4,7 @@ import { MessageCircle, Star } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-6 md:px-10 bg-gray-200 relative z-0">
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-6 md:px-10 bg-[#f5f5f7] relative z-0">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 md:space-y-8 animate-fade-in">
@@ -16,7 +16,7 @@ const Hero = () => {
             Tu restaurante, en modo  <span className="text-[#41b72c]">inteligente</span>
             </h1>
             <p className="text-lg md:text-xl text-[#333333]/90 max-w-xl">
-            Reservas automatizadas. Costos bajos. Mesas llenas.
+            Reservas automatizadas. Costos bajos. <strong>Mesas llenas.</strong>
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
               <Button className="text-md bg-black hover:bg-gray-800 h-12 px-6 shadow-lg shadow-black/20 text-white">
