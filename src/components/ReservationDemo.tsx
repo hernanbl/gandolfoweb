@@ -11,7 +11,7 @@ const ReservationDemo = () => {
       className="py-20 px-6 md:px-10 relative overflow-hidden"
     >
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-yellow-50 via-amber-200 to-[#DA5107] z-0"
+        className="absolute inset-0 bg-gradient-to-b from-yellow-50 via-amber-200 to-[#fdad18] z-0"
       ></div>
       <div 
         className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white/40 to-transparent z-0"
@@ -20,7 +20,7 @@ const ReservationDemo = () => {
         className="absolute top-0 left-1/2 w-40 h-40 -translate-x-1/2 bg-[#41b72c] opacity-[0.15] blur-3xl z-0"
       ></div>
       <div 
-        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#DA5107]/30 to-transparent z-0"
+        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#fdad18]/30 to-transparent z-0"
       ></div>
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

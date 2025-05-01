@@ -140,10 +140,10 @@ const AdminDashboard = () => {
                       <Line
                         type="monotone"
                         dataKey="reservations"
-                        stroke="#ffffff"
+                        stroke="#fdad18"
                         strokeWidth={2}
                         dot={{ r: 3 }}
-                        activeDot={{ r: 5 }}
+                        activeDot={{ r: 4 }}
                       />
                     </LineChart>
                   </ResponsiveContainer>

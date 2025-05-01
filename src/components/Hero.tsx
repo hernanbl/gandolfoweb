@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Star } from "lucide-react";
+import BookingModal from "./BookingModal";
 
 const Hero = () => {
   const [isHighlighted, setIsHighlighted] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
   
   useEffect(() => {
     // Aplicar la clase animated después de que el resaltado haya comenzado
@@ -27,10 +29,13 @@ const Hero = () => {
               Tu restaurante, en modo <span className={`highlight-container highlighted ${isHighlighted ? 'animated' : ''}`}>inteligente</span>
             </h1>
             <p className="text-lg md:text-xl text-[#333333]/90 max-w-xl">
-            Reservas automatizadas. Costos bajos. <strong>Mesas llenas.</strong>
+              Reservas automatizadas. Costos bajos. <strong>Mesas llenas.</strong>
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-3">
-              <Button className="text-md bg-black hover:bg-gray-800 h-12 px-6 shadow-lg shadow-black/20 text-white">
+              <Button 
+                className="text-md bg-black hover:bg-gray-800 h-12 px-6 shadow-lg shadow-black/20 text-white"
+                onClick={() => setBookingModalOpen(true)}
+              >
                 Empezar ahora
               </Button>
               <Button 
@@ -59,6 +64,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <BookingModal open={bookingModalOpen} onOpenChange={setBookingModalOpen} />
     </section>
   );
 };
