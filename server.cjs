@@ -10,8 +10,8 @@ const app = express();
 
 // Configurar CORS para permitir solicitudes desde tu frontend
 app.use(cors({
-  origin: 'http://localhost:8080', // La URL de tu frontend
-  methods: ['POST'],
+  origin: ['https://gandolfo.netlify.app/', 'http://localhost:8080'], // Añade tu URL de Netlify
+  methods: ['POST', 'GET'],  // Permitir tanto POST como GET
   credentials: true
 }));
 
