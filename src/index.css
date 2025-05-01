@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -69,5 +68,69 @@
 
   .card-hover {
     @apply hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Estilo global para los enlaces en hover */
+  a:hover {
+    color: #41b72c !important;
+    transition: color 0.2s ease-in-out;
+  }
+
+  /* Animación de resaltado para la palabra "inteligente" */
+  @keyframes highlight {
+    0% {
+      width: 0;
+      left: -0.2em;
+    }
+    100% {
+      width: calc(100% + 0.4em);
+      left: -0.2em;
+    }
+  }
+
+  .highlight-container {
+    position: relative;
+    display: inline-block;
+    color: #333333; /* Inicialmente negro como el resto del texto */
+    overflow: visible;
+    padding: 0 0.1em;
+  }
+
+  .highlight-container::before {
+    content: "";
+    position: absolute;
+    top: -0.05em;
+    left: -0.2em;
+    width: 0;
+    height: calc(100% + 0.1em);
+    background-color: #41b72c;
+    animation: highlight 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards; /* Aumentada de 0.7s a 1.2s */
+    animation-delay: 1s;
+    z-index: -1;
+    border-radius: 0;
+    transform-origin: left;
+  }
+
+  .highlight-container.highlighted {
+    color: #333333; /* Iniciar con negro */
+    transition: color 0.2s ease-in-out;
+    transition-delay: 1.1s; /* Retrasado para que cambie a blanco cuando el resaltador haya cubierto la palabra */
+  }
+  
+  /* Clase que se aplica durante la animación para cambiar a texto blanco */
+  .highlight-container.highlighted.animated {
+    color: white;
+    transition: color 0.1s ease-out;
+  }
+
+  /* Gradiente especial para la frase "Atención al cliente reinventada" */
+  .text-gradient-special {
+    background: linear-gradient(90deg, #1E90FF 0%, #FF00AA 50%, #FF5F15 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 700;
+    text-shadow: 0 0 2px rgba(255,255,255,0.1);
   }
 }
