@@ -50,7 +50,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
     try {
       console.log("Enviando solicitud al servidor...");
       
-      const response = await fetch('https://gandolfo-web.onrender.com/', {
+      const response = await fetch('https://gandolfo-web.onrender.com/api/send-booking-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
