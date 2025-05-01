@@ -50,7 +50,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
     try {
       console.log("Enviando solicitud al servidor...");
       
-      const response = await fetch('http://localhost:3001/api/send-booking-email', {
+      const response = await fetch('/api/send-booking-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

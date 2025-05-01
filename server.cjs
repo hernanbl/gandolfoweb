@@ -1,14 +1,6 @@
 // Al principio del archivo
 require('dotenv').config();
 
-// Y luego cambiar
-const transporter = nodemailer.createTransport({
-  // ...
-  auth: {
-    user: process.env.EMAIL_USER || 'gandolfo@vivacom.com.ar',
-    pass: process.env.EMAIL_PASS || 'tu-contraseña'
-  }
-});
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -44,8 +36,8 @@ app.post('/api/send-booking-email', async (req, res) => {
       port: 465,
       secure: true,
       auth: {
-        user: 'gandolfo@vivacom.com.ar', // Reemplaza con tu email real
-        pass: 'jsH7$akf1'         // Reemplaza con tu contraseña real
+        user: process.env.EMAIL_USER || 'gandolfo@vivacom.com.ar',
+        pass: process.env.EMAIL_PASS || 'tu-contraseña'
       }
     });
     
@@ -103,7 +95,7 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar el servidor
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+  console.log(`Servidor ejecutándose en el puerto ${PORT}`);
 });
