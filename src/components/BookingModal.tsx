@@ -101,13 +101,20 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
       if (!newOpen) resetForm();
       onOpenChange(newOpen);
     }}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto border-2 border-[#85bd3c]">
+        <div className="flex justify-center mb-4">
+          <img 
+            src="/lovable-uploads/6bcb67af-0832-459e-84e2-ac3b11d0c7ab.png" 
+            alt="Gandolfo Logo" 
+            className="h-12 w-auto" 
+          />
+        </div>
         <DialogHeader>
           <DialogTitle className="text-xl font-bold flex items-center">
             <span className="mr-2">🚀</span> Descubrí Gandolfo
           </DialogTitle>
           <DialogDescription className="text-base">
-            30 min · Detalles de la conferencia web proporcionados al confirmar.
+            30 min · Detalles de la conference call proporcionados al confirmar.
           </DialogDescription>
         </DialogHeader>
 
@@ -130,7 +137,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
                 <span className="mr-2">💡</span> Exploraremos soluciones reales adaptadas a tus necesidades
               </h3>
               <p className="text-sm text-muted-foreground">
-                Sin cháchara. Solo ideas revolucionarias, ejemplos concretos y la 
+                Sin vueltas. Solo ideas innovadoras, ejemplos concretos y la 
                 oportunidad de ver cómo la IA puede transformar tu negocio.
               </p>
             </div>
@@ -157,6 +164,10 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
                         onSelect={setDate}
                         disabled={(date) => date < new Date() || date > new Date(2025, 12, 31)}
                         initialFocus
+                        classNames={{
+                          day_selected: "bg-black hover:bg-gray-800 focus:bg-gray-800 text-white",
+                          day_today: "bg-gray-100"
+                        }}
                       />
                     </PopoverContent>
                   </Popover>
@@ -249,7 +260,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
             <DialogFooter className="pt-4">
               <Button
                 type="submit"
-                className="w-full bg-black hover:bg-gray-800"
+                className="w-full bg-black hover:bg-gray-800 text-white"
                 disabled={!date || !selectedHour || !name || !email || !phone || isSubmitting}
               >
                 {isSubmitting ? 'Procesando...' : 'Confirmar reunión'}
@@ -270,7 +281,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
             </p>
             <Button
               onClick={handleCloseModal}
-              className="mt-4"
+              className="mt-4 bg-black hover:bg-gray-800 text-white"
             >
               Cerrar
             </Button>
