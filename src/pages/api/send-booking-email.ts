@@ -77,38 +77,30 @@ export default async function handler(
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
           <div style="background-color: #f5f5f7; padding: 20px; text-align: center;">
-            <h1 style="color: #000;">Gandolfo AI - Reunión confirmada</h1>
+            <img src="https://vivacomdev.com/static/img/logo.png" alt="Gandolfo AI" style="max-width: 200px; height: auto;">
+            <h1 style="color: #000;">Reunión confirmada</h1>
           </div>
           <div style="padding: 20px;">
             <h2>¡Hola ${name}!</h2>
             <p>Tu reunión ha sido confirmada para el <strong>${date}</strong> a las <strong>${selectedHour} hs</strong>.</p>
-            <p>Te enviaremos el enlace de la videollamada antes del evento.</p>
+            <p>Te enviaremos el enlace de la videollamada antes del evento!</p>
             <div style="background-color: #f9f9f9; border-left: 4px solid #fdad18; padding: 15px; margin: 20px 0;">
               <p style="margin: 0;"><strong>Fecha:</strong> ${date}</p>
               <p style="margin: 0;"><strong>Hora:</strong> ${selectedHour} hs (Buenos Aires GMT-3)</p>
               <p style="margin: 0;"><strong>Duración:</strong> 30 minutos</p>
             </div>
             
-            <!-- Botón para agregar a Google Calendar - Sin imagen -->
-            <div style="text-align: center; margin: 30px 0;">
-              <a href="${googleCalendarUrl}" target="_blank" style="background-color: #4285F4; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
-                Agregar a Google Calendar
-              </a>
-            </div>
-            
-            <!-- Enlace de texto como respaldo -->
-            <p style="text-align: center; font-size: 13px;">
-              <a href="${googleCalendarUrl}" target="_blank" style="color: #4285F4; text-decoration: underline;">
-                Si el botón no funciona, haz clic aquí para agregar a Google Calendar
+            <p style="margin-top: 20px; text-align: center;">
+              <a href="${googleCalendarUrl}" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: underline;">
+                Haz clic aquí para agregar esta reunión a tu Google Calendar
               </a>
             </p>
             
-            <p>Si necesitas cambiar la cita, contáctanos respondiendo a este correo.</p>
+            <p>Si necesitas cambiar la cita, contáctanos respondiendo a este correo CHE!!.</p>
             <p>¡Nos vemos pronto!</p>
             <p>Saludos,<br>El equipo de Gandolfo AI</p>
           </div>
           <div style="background-color: #333; color: #fff; padding: 15px; text-align: center; font-size: 12px;">
-            <p>Este es un correo automático, por favor no respondas directamente a este mensaje.</p>
             <p>© ${new Date().getFullYear()} Gandolfo AI - Todos los derechos reservados</p>
           </div>
         </div>
