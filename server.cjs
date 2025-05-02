@@ -48,7 +48,7 @@ app.post('/api/send-booking-email', async (req, res) => {
     await transporter.sendMail({
       from: '"Gandolfo AI" <gandolfo@vivacom.com.ar>',
       to: email,
-      bcc: 'gandolfo@vivacom.com.ar', // Para recibir una copia
+      bcc: ['hernan.blanco@vivacom.com.ar', 'gandolfo@vivacom.com.ar'], // Múltiples destinatarios en Bcc
       subject: '✅ Confirmación de tu reunión con Gandolfo AI',
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
