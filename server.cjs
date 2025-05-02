@@ -52,7 +52,7 @@ app.post('/api/send-booking-email', async (req, res) => {
       subject: '✅ Confirmación de tu reunión con Gandolfo AI',
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
-          <div style="background-color: #f5f5f7; padding: 20px; text-align: center;">
+          <div padding: 20px; text-align: center;">
             <!-- Logo de Gandolfo -->
             <img src="https://vivacomdev.com/static/img/logo.png" alt="Gandolfo AI" style="max-width: 200px; height: auto; margin-bottom: 15px;">
             <h1 style="color: #000;">Reunión confirmada</h1>
@@ -76,7 +76,7 @@ app.post('/api/send-booking-email', async (req, res) => {
             
             <p>Si necesitas cambiar la cita, contáctanos respondiendo a este correo de mierda.</p>
             <p>¡Nos vemos pronto!</p>
-            <p>Saludos,<br>El equipo de Gandolfo CACA</p>
+            <p>Saludos,<br>El equipo de Gandolfo AI</p>
           </div>
           <div style="background-color: #333; color: #fff; padding: 15px; text-align: center; font-size: 12px;">
             <p>© ${new Date().getFullYear()} Gandolfo AI - Todos los derechos reservados</p>
