@@ -54,7 +54,7 @@ app.post('/api/send-booking-email', async (req, res) => {
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
           <div padding: 20px; text-align: center;">
             <!-- Logo de Gandolfo -->
-            <img src="https://vivacomdev.com/static/img/logo.png" alt="Gandolfo AI" style="max-width: 200px; height: auto; margin-bottom: 15px;">
+            <img src="https://vivacomdev.com/static/img/logo.png" alt="Gandolfo AI" style="max-width: 150px; height: auto; margin-bottom: 25px;">
             <h1 style="color: #000;">Reunión confirmada</h1>
           </div>
           <div style="padding: 20px;">
