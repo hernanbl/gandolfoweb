@@ -74,7 +74,7 @@ app.post('/api/send-booking-email', async (req, res) => {
               </a>
             </div>
             
-            <p>Si necesitas cambiar la cita, contáctanos respondiendo a este correo de mierda.</p>
+            <p>Si necesitas cambiar la cita, contáctanos respondiendo a este correo.</p>
             <p>¡Nos vemos pronto!</p>
             <p>Saludos,<br>El equipo de Gandolfo AI</p>
           </div>
