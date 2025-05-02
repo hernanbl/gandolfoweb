@@ -101,7 +101,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
       if (!newOpen) resetForm();
       onOpenChange(newOpen);
     }}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto border-2 border-[#85bd3c]">
+      <DialogContent className="sm:max-w-[650px] max-h-[90vh] overflow-y-auto border-2 border-[#85bd3c]">
         <div className="flex justify-center mb-4">
           <img 
             src="/lovable-uploads/6bcb67af-0832-459e-84e2-ac3b11d0c7ab.png" 
@@ -118,98 +118,106 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
           </DialogDescription>
         </DialogHeader>
 
+        <div className="border-b border-gray-200 my-4"></div>
+
         {!submitted ? (
           <form onSubmit={handleSubmit} className="space-y-4 py-2">
-            <div className="space-y-1">
-              <h3 className="font-medium flex items-center">
-                <span className="mr-2">🎯</span> ¿Tenés 30 minutos? Hagamos que valgan la pena.
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                ¿Cansado de llamadas perdidas e ingresos desperdiciados? Cambiemos eso. 
-                En esta sesión exprés de 30 minutos, veremos cómo el asistente de chat 
-                impulsado por IA de Gandolfo puede atender consultas de clientes las 24 horas, 
-                aumentar tus ingresos y permitir que tu equipo se concentre en lo que mejor sabe hacer.
-              </p>
-            </div>
-            
-            <div className="space-y-1">
-              <h3 className="font-medium flex items-center">
-                <span className="mr-2">💡</span> Exploraremos soluciones reales adaptadas a tus necesidades
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Sin vueltas. Solo ideas innovadoras, ejemplos concretos y la 
-                oportunidad de ver cómo la IA puede transformar tu negocio.
-              </p>
-            </div>
-
-            <div className="space-y-4 pt-4">
-              <h3 className="font-medium">Seleccioná una fecha y hora</h3>
-              
-              <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-                <div className="flex-1">
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className="w-full justify-start text-left font-normal"
-                      >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
-                        {date ? format(date, "PPP", { locale: es }) : <span>Seleccionar fecha</span>}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        disabled={(date) => date < new Date() || date > new Date(2025, 12, 31)}
-                        initialFocus
-                        classNames={{
-                          day_selected: "bg-black hover:bg-gray-800 focus:bg-gray-800 text-white",
-                          day_today: "bg-gray-100"
-                        }}
-                      />
-                    </PopoverContent>
-                  </Popover>
-                </div>
-
-                <div className="flex-1">
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className="w-full justify-start text-left font-normal"
-                        disabled={!date}
-                      >
-                        <Clock className="mr-2 h-4 w-4" />
-                        {selectedHour ? selectedHour : <span>Seleccionar hora</span>}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[200px] p-0" align="start">
-                      <div className="grid grid-cols-2 gap-1 p-2 max-h-[300px] overflow-y-auto">
-                        {availableHours.map((hour) => (
-                          <Button
-                            key={hour}
-                            variant="ghost"
-                            className="justify-start font-normal"
-                            onClick={() => setSelectedHour(hour)}
-                          >
-                            {hour}
-                          </Button>
-                        ))}
-                      </div>
-                    </PopoverContent>
-                  </Popover>
-                </div>
-              </div>
-
-              <div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Zona horaria: Hora de Buenos Aires (GMT-3)
+            <div className="border border-gray-200 rounded-lg p-4">
+              <div className="space-y-1">
+                <h3 className="font-medium flex items-center">
+                  <span className="mr-2">🎯</span> ¿Tenés 30 minutos? Hagamos que valgan la pena.
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  ¿Cansado de llamadas perdidas e ingresos desperdiciados? Cambiemos eso. 
+                  En esta sesión exprés de 30 minutos, veremos cómo el asistente de chat 
+                  impulsado por IA de Gandolfo puede atender consultas de clientes las 24 horas, 
+                  aumentar tus ingresos y permitir que tu equipo se concentre en lo que mejor sabe hacer.
                 </p>
               </div>
+              
+              <div className="space-y-1 mt-4">
+                <h3 className="font-medium flex items-center">
+                  <span className="mr-2">💡</span> Exploraremos soluciones reales adaptadas a tus necesidades
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Sin vueltas. Solo ideas innovadoras, ejemplos concretos y la 
+                  oportunidad de ver cómo la IA puede transformar tu negocio.
+                </p>
+              </div>
+            </div>
 
-              <div className="space-y-4 pt-4">
+            <div className="border border-gray-200 rounded-lg p-4">
+              <div className="space-y-4">
+                <h3 className="font-medium">Seleccioná una fecha y hora</h3>
+                
+                <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+                  <div className="flex-1">
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="w-full justify-start text-left font-normal"
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {date ? format(date, "PPP", { locale: es }) : <span>Seleccionar fecha</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={date}
+                          onSelect={setDate}
+                          disabled={(date) => date < new Date() || date > new Date(2025, 12, 31)}
+                          initialFocus
+                          classNames={{
+                            day_selected: "bg-black hover:bg-gray-800 focus:bg-gray-800 text-white",
+                            day_today: "bg-gray-100"
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+
+                  <div className="flex-1">
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="w-full justify-start text-left font-normal"
+                          disabled={!date}
+                        >
+                          <Clock className="mr-2 h-4 w-4" />
+                          {selectedHour ? selectedHour : <span>Seleccionar hora</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[200px] p-0" align="start">
+                        <div className="grid grid-cols-2 gap-1 p-2 max-h-[300px] overflow-y-auto">
+                          {availableHours.map((hour) => (
+                            <Button
+                              key={hour}
+                              variant="ghost"
+                              className="justify-start font-normal"
+                              onClick={() => setSelectedHour(hour)}
+                            >
+                              {hour}
+                            </Button>
+                          ))}
+                        </div>
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Zona horaria: Hora de Buenos Aires (GMT-3)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4">
+              <div className="space-y-4">
                 <h3 className="font-medium">Tus datos</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -269,16 +277,18 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
           </form>
         ) : (
           <div className="py-12 flex flex-col items-center justify-center space-y-4">
-            <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
+            <div className="border border-gray-200 rounded-lg p-6 text-center">
+              <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl">¡Reserva confirmada!</h3>
+              <p className="text-center text-gray-600">
+                Hemos enviado un correo a <strong>{email}</strong> con los detalles de la reunión.
+                Te esperamos el {date && format(date, "PPP", { locale: es })} a las {selectedHour} hs.
+              </p>
             </div>
-            <h3 className="font-bold text-xl">¡Reserva confirmada!</h3>
-            <p className="text-center text-gray-600">
-              Hemos enviado un correo a <strong>{email}</strong> con los detalles de la reunión.
-              Te esperamos el {date && format(date, "PPP", { locale: es })} a las {selectedHour} hs.
-            </p>
             <Button
               onClick={handleCloseModal}
               className="mt-4 bg-black hover:bg-gray-800 text-white"

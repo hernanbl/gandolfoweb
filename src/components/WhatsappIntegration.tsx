@@ -22,7 +22,8 @@ const WhatsappIntegration = () => {
               <div className="flex items-start gap-5 mb-5">
                 <div className="bg-green-500 rounded-xl p-3 flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-8 h-8">
-                    <path d="M6 2l.094.006c.17.013.32.05.462.108l-.093-.028a1.498 1.498 0 0 1 .392.17l.087.054.073.053.073.06a1.49 1.49 0 0 1 .134.13c.327.34.536.794.536 1.295v16.308A2.25 2.25 0 0 1 5.5 22.5a2.25 2.25 0 0 1-2.25-2.25v-15a1.5 1.5 0 0 1 1.5-1.5H6Zm10.5 0A1.5 1.5 0 0 1 18 3.5v15a2.25 2.25 0 0 1-2.25 2.25 2.25 2.25 0 0 1-2.25-2.25V4.152a1.5 1.5 0 0 1 1.5-1.5h1.5Zm-6 0A1.5 1.5 0 0 1 12 3.5v15.75a2.25 2.25 0 0 1-4.5 0V3.5A1.5 1.5 0 0 1 9 2h1.5Z" />
+                    <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
+                    <circle cx="19.5" cy="4.5" r="2.5" fill="white"/>
                   </svg>
                 </div>
                 <div>
@@ -80,6 +81,16 @@ const WhatsappIntegration = () => {
                   <h4 className="text-xl font-bold mb-2">Atención personalizada</h4>
                   <p className="text-gray-400">La IA recuerda preferencias de clientes para una mejor experiencia</p>
                 </motion.div>
+              </div>
+
+              {/* Texto explicativo debajo de las cards de WhatsApp */}
+              <div className="mt-8  px-4 md:px-0">
+                <p className="text-sm text-gray-400 max-w-3xl mx-auto">
+                  Comunícate con tus clientes por medio de la app de mensajería más usada del mundo. 
+                  La WhatsApp Business API es una interfaz de programación de aplicaciones (API) 
+                  proporcionada por Meta (anteriormente Facebook) que permite a tu restaurante 
+                  integrar WhatsApp en tu negocio de manera segura, mediante el bot de Gandolfo.
+                </p>
               </div>
             </div>
           </ScrollReveal>

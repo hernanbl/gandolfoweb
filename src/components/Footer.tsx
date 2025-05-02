@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-gradient">Gandolfo</h3>
+            <img src="lovable-uploads/logo_gandolfo-bco.png" alt="Gandolfo Logo" className="h-11 mb-4" />
             <p className="text-slate-400 mb-6">
               Potencia tu restaurante con inteligencia artificial para ofrecer un mejor servicio a tus clientes.
             </p>
@@ -70,7 +70,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MessageCircle className="h-5 w-5 text-orange-500 mr-3 mt-0.5" />
                 <span className="text-slate-400">
-                  info@gandolfo.com
+                  info@gandolfo.app
                 </span>
               </li>
             </ul>

@@ -26,6 +26,37 @@ export default async function handler(
   }
 
   try {
+    // Crear enlace para Google Calendar
+    // Parsear la fecha y hora para crear el formato adecuado para Google Calendar
+    const [day, month, year] = date.split(' de ');
+    
+    // Mapeo de meses en español a números
+    const monthsMap: {[key: string]: string} = {
+      'enero': '01', 'febrero': '02', 'marzo': '03', 'abril': '04',
+      'mayo': '05', 'junio': '06', 'julio': '07', 'agosto': '08',
+      'septiembre': '09', 'octubre': '10', 'noviembre': '11', 'diciembre': '12'
+    };
+    
+    const monthNumber = monthsMap[month.toLowerCase()] || '01';
+    const [hours, minutes] = selectedHour.split(':');
+    
+    // Crear fecha de inicio y fin (30 minutos después)
+    const startDate = new Date(`${year}-${monthNumber}-${day.padStart(2, '0')}T${hours}:${minutes || '00'}:00-03:00`);
+    const endDate = new Date(startDate.getTime() + 30 * 60000); // 30 minutos después
+    
+    // Formatear para URL
+    const formatForUrl = (date: Date) => date.toISOString().replace(/-|:|\.\d+/g, '');
+    const start = formatForUrl(startDate);
+    const end = formatForUrl(endDate);
+    
+    // Crear texto para el evento
+    const eventTitle = encodeURIComponent(`Reunión con Gandolfo AI`);
+    const eventLocation = encodeURIComponent('Meet virtual - recibirás el enlace por correo');
+    const eventDetails = encodeURIComponent(`Reunión para conocer Gandolfo AI\n\nDetalle de la reserva:\n- Nombre: ${name}\n- Empresa: ${company || 'No especificada'}\n- Teléfono: ${phone}\n- Email: ${email}`);
+    
+    // Generar URL de Google Calendar
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${start}/${end}&details=${eventDetails}&location=${eventLocation}&sf=true&output=xml`;
+
     // Configurar transporter de nodemailer
     const transporter = nodemailer.createTransport({
       host: 'smtp.hostinger.com',
@@ -46,8 +77,7 @@ export default async function handler(
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
           <div style="background-color: #f5f5f7; padding: 20px; text-align: center;">
-            <img src="https://tudominio.com/logo.png" alt="Gandolfo AI" style="max-width: 200px; margin-bottom: 20px;">
-            <h1 style="color: #000;">Reunión confirmada</h1>
+            <h1 style="color: #000;">Gandolfo AI - Reunión confirmada</h1>
           </div>
           <div style="padding: 20px;">
             <h2>¡Hola ${name}!</h2>
@@ -58,6 +88,21 @@ export default async function handler(
               <p style="margin: 0;"><strong>Hora:</strong> ${selectedHour} hs (Buenos Aires GMT-3)</p>
               <p style="margin: 0;"><strong>Duración:</strong> 30 minutos</p>
             </div>
+            
+            <!-- Botón para agregar a Google Calendar - Sin imagen -->
+            <div style="text-align: center; margin: 30px 0;">
+              <a href="${googleCalendarUrl}" target="_blank" style="background-color: #4285F4; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                Agregar a Google Calendar
+              </a>
+            </div>
+            
+            <!-- Enlace de texto como respaldo -->
+            <p style="text-align: center; font-size: 13px;">
+              <a href="${googleCalendarUrl}" target="_blank" style="color: #4285F4; text-decoration: underline;">
+                Si el botón no funciona, haz clic aquí para agregar a Google Calendar
+              </a>
+            </p>
+            
             <p>Si necesitas cambiar la cita, contáctanos respondiendo a este correo.</p>
             <p>¡Nos vemos pronto!</p>
             <p>Saludos,<br>El equipo de Gandolfo AI</p>
