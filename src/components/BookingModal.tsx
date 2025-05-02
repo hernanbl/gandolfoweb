@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar as CalendarIcon, X, Clock } from "lucide-react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { Calendar } from "@/components/ui/calendar";
+import CustomCalendar from "./CustomCalendar"; // Importa el nuevo componente
 import {
   Dialog,
   DialogContent,
@@ -34,7 +34,7 @@ const availableHours = [
 ];
 
 const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
-  const [date, setDate] = useState<Date | undefined>(undefined);
+  const [date, setDate] = useState<Date | null>(null);
   const [selectedHour, setSelectedHour] = useState<string>("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -82,7 +82,7 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
   };
 
   const resetForm = () => {
-    setDate(undefined);
+    setDate(null);
     setSelectedHour("");
     setName("");
     setEmail("");
@@ -169,38 +169,21 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
                   </div>
                 </div>
 
+                <div className="border border-gray-200 rounded-lg p-4 mb-6">
+                  <h3 className="font-medium mb-3">Selecciona una fecha</h3>
+                  
+                  {/* Reemplaza el Calendar existente con nuestro CustomCalendar */}
+                  <CustomCalendar 
+                    selectedDate={date}
+                    onChange={(newDate) => setDate(newDate)}
+                  />
+                </div>
+
                 <div className="border border-gray-200 rounded-lg p-4">
                   <div className="space-y-4">
-                    <h3 className="font-medium">Seleccioná una fecha y hora</h3>
+                    <h3 className="font-medium">Seleccioná una hora</h3>
                     
                     <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-                      <div className="flex-1">
-                        <Popover>
-                          <PopoverTrigger asChild>
-                            <Button
-                              variant="outline"
-                              className="w-full justify-start text-left font-normal"
-                            >
-                              <CalendarIcon className="mr-2 h-4 w-4" />
-                              {date ? format(date, "PPP", { locale: es }) : <span>Seleccionar fecha</span>}
-                            </Button>
-                          </PopoverTrigger>
-                          <PopoverContent className="w-auto p-0" align="start">
-                            <Calendar
-                              mode="single"
-                              selected={date}
-                              onSelect={setDate}
-                              disabled={(date) => date < new Date() || date > new Date(2025, 12, 31)}
-                              initialFocus
-                              classNames={{
-                                day_selected: "bg-black hover:bg-gray-800 focus:bg-gray-800 text-white",
-                                day_today: "bg-gray-100"
-                              }}
-                            />
-                          </PopoverContent>
-                        </Popover>
-                      </div>
-
                       <div className="flex-1">
                         <Popover>
                           <PopoverTrigger asChild>
