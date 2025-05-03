@@ -133,18 +133,16 @@ const BookingModal = ({ open, onOpenChange }: BookingModalProps) => {
             
             <DialogHeader className="px-0 text-center">
               <DialogTitle className="text-xl font-bold flex items-center justify-center">
-                <span className="mr-2">🚀</span> Descubrí Gandolfo
+                <span className="mr-3 text-2xl">🚀</span> {/* Añadido text-3xl para el icono */}
+                Descubrí Gandolfo
               </DialogTitle>
-              <DialogDescription className="text-base">
-                30 min · Detalles de la conference call proporcionados al confirmar.
+              <DialogDescription className="text-base flex items-center justify-center">
+                30 min · Los detalles te serán proporcionados al confirmar.
               </DialogDescription>
             </DialogHeader>
             
-            {/* El resto del contenido no modificado */}
-            <div className="border-b border-gray-200 my-4"></div>
-
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="space-y-4 py-2 px-6">
+              <form onSubmit={handleSubmit} className="space-y-4 py-2 px-6 mt-4"> {/* Añadido mt-4 para compensar espacio */}
                 <div className="border border-gray-200 rounded-lg p-4">
                   <div className="space-y-1">
                     <h3 className="font-medium flex items-center">

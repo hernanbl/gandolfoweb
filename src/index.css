@@ -103,7 +103,7 @@
     left: -0.2em;
     width: 0;
     height: calc(100% + 0.1em);
-    background-color: #41b72c;
+    background-color: #f97118; /* Este es el resaltado de la palabra Inteligente en el Hero */
     animation: highlight 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards; /* Aumentada de 0.7s a 1.2s */
     animation-delay: 1s;
     z-index: -1;

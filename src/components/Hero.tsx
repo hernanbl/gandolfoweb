@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-5 md:space-y-7 animate-fade-in">
             <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full w-fit shadow-sm">
-              <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-300" />
               <span className="text-sm font-medium text-[#333333]">Atención al cliente reinventada</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-[#333333]">
@@ -53,12 +53,26 @@ const Hero = () => {
           </div>
           
           <div className="relative h-[400px] md:h-[480px] lg:h-[640px] animate-fade-in">
+            {/* Elemento de fondo naranja existente */}
             <div className="absolute inset-x-[25%] top-[28%] bottom-[22%] bg-gradient-to-br from-white/5 to-orange-500/10 rounded-lg transform rotate-2 z-0"></div>
-            <div className="absolute inset-0 rounded-xl shadow z-10 overflow-hidden flex items-center justify-center">
+            
+            {/* Elementos para el borde irregular pardo - Más grandes y rotados */}
+            <div 
+              className="absolute inset-0 m-auto w-[97%] h-[83%] bg-[#ffc69d] rounded-lg transform -rotate-2 z-[5]" // Aumentado tamaño y rotación
+              style={{ backgroundColor: '#ffc69d' }} // Color pardo 1
+            ></div>
+             <div 
+              className="absolute inset-0 m-auto w-[96.5%] h-[82.5%] bg-[#f8d7bf] rounded-lg transform rotate-1 z-[6]" // Aumentado tamaño y rotación
+              style={{ backgroundColor: '#f8d7bf' }} // Color pardo 2
+            ></div>
+
+            {/* Contenedor de la imagen principal */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center"> 
               <img 
-                src="/lovable-uploads/parejacomiendo.jpg" 
+                src="/lovable-uploads/36033922-751d-4db0-89eb-88c4e2401063.jpeg" 
                 alt="Restaurante con personas disfrutando comida con asistencia de Gandolfo" 
-                className="w-[81%] h-[81%] object-cover object-[center_55%] rounded-lg"
+                // Mantenemos el tamaño y redondeo de la imagen
+                className="w-[95%] h-[81%] object-cover object-[center_55%] rounded-lg shadow-lg" 
               />
             </div>
           </div>
