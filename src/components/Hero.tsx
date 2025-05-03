@@ -31,7 +31,7 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-[#333333]/90 max-w-xl">
               Reservas automatizadas. Costos bajos. <strong>Mesas llenas.</strong>
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-3">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
               <Button 
                 className="text-md bg-black hover:bg-gray-800 h-12 px-6 shadow-lg shadow-black/20 text-white"
                 onClick={() => setBookingModalOpen(true)}
